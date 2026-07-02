@@ -1,11 +1,11 @@
 const fragmentSlots = [
-  { slot: '#header-slot', file: './header.html' },
-  { slot: '#hero-slot', file: './hero.html' },
-  { slot: '#services-slot', file: './services.html' },
-  { slot: '#portfolio-slot', file: './portfolio.html' },
-  { slot: '#process-slot', file: './process.html' },
-  { slot: '#contact-slot', file: './contact.html' },
-  { slot: '#footer-slot', file: './footer.html' },
+  { slot: '#header-slot', file: 'html/header.html' },
+  { slot: '#hero-slot', file: 'html/hero.html' },
+  { slot: '#services-slot', file: 'html/services.html' },
+  { slot: '#portfolio-slot', file: 'html/portfolio.html' },
+  { slot: '#process-slot', file: 'html/process.html' },
+  { slot: '#contact-slot', file: 'html/contact.html' },
+  { slot: '#footer-slot', file: 'html/footer.html' },
 ];
 
 const loadFragment = async (slotSelector, file) => {
