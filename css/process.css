@@ -1,0 +1,40 @@
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.2rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.timeline__item span {
+  display: grid;
+  place-items: center;
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 1rem;
+  background: rgba(43, 124, 255, 0.12);
+  color: var(--accent);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+}
+
+.timeline__item h3 {
+  margin: 0 0 0.55rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 760px) {
+  .timeline__item {
+    grid-template-columns: 1fr;
+  }
+}

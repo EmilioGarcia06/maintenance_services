@@ -1,0 +1,130 @@
+.page-orb {
+  position: fixed;
+  inset: auto;
+  width: 28rem;
+  height: 28rem;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.24;
+  pointer-events: none;
+  z-index: 0;
+  animation: float 12s ease-in-out infinite;
+}
+
+.page-orb--left {
+  top: 5rem;
+  left: -9rem;
+  background: rgba(43, 124, 255, 0.5);
+}
+
+.page-orb--right {
+  top: 18rem;
+  right: -10rem;
+  background: rgba(40, 194, 160, 0.5);
+  animation-delay: -4s;
+}
+
+.topbar,
+.section,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.section {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.section--tight {
+  padding-top: 1rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--accent);
+  font-size: 0.88rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.section__heading {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1,
+.section__heading h2,
+.section--cta h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  font-size: clamp(3rem, 6vw, 6.2rem);
+}
+
+.section__heading h2,
+.section--cta h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+.hero__text,
+.section__heading p:last-child,
+.section--cta p,
+.service-card p,
+.portfolio-card p,
+.timeline__item p,
+.hero-card p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.button--primary {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), #5d99ff);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto 1.5rem;
+  padding-bottom: 1rem;
+  color: var(--muted);
+  text-align: center;
+}
