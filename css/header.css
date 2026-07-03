@@ -13,6 +13,14 @@
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
+  transition: transform 240ms ease, opacity 240ms ease, box-shadow 240ms ease;
+  will-change: transform, opacity;
+}
+
+.topbar.is-hidden {
+  transform: translateY(calc(-100% - 1.25rem));
+  opacity: 0;
+  pointer-events: none;
 }
 
 .brand {
@@ -82,6 +90,10 @@
   .topbar {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .topbar.is-hidden {
+    transform: translateY(calc(-100% - 1.5rem));
   }
 
   .nav {

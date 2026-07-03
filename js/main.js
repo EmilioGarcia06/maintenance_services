@@ -28,6 +28,7 @@ const boot = async () => {
   await Promise.all(fragmentSlots.map(({ slot, file }) => loadFragment(slot, file)));
 
 const revealItems = document.querySelectorAll('.reveal');
+const topbar = document.querySelector('.topbar');
 const navLinks = document.querySelectorAll('.nav a[href^="#"]');
 const sectionIds = Array.from(navLinks)
   .map((link) => link.getAttribute('href'))
@@ -74,9 +75,48 @@ const updateActiveNav = () => {
   });
 };
 
+let lastScrollY = window.scrollY;
+let scrollTicking = false;
+
+const updateTopbarVisibility = () => {
+  if (!topbar) {
+    topbar?.classList.remove('is-hidden');
+    lastScrollY = window.scrollY;
+    scrollTicking = false;
+    return;
+  }
+
+  const currentScrollY = window.scrollY;
+  const directionDelta = currentScrollY - lastScrollY;
+  const goingDown = directionDelta > 8;
+  const goingUp = directionDelta < -8;
+
+  if (currentScrollY < 72 || goingUp) {
+    topbar.classList.remove('is-hidden');
+  } else if (goingDown && currentScrollY > 96) {
+    topbar.classList.add('is-hidden');
+  }
+
+  lastScrollY = currentScrollY;
+  scrollTicking = false;
+};
+
+const requestTopbarVisibilityUpdate = () => {
+  if (scrollTicking) {
+    return;
+  }
+
+  scrollTicking = true;
+  window.requestAnimationFrame(updateTopbarVisibility);
+};
+
 window.addEventListener('scroll', updateActiveNav, { passive: true });
+window.addEventListener('scroll', requestTopbarVisibilityUpdate, { passive: true });
+window.addEventListener('resize', requestTopbarVisibilityUpdate, { passive: true });
 window.addEventListener('load', updateActiveNav);
+window.addEventListener('load', updateTopbarVisibility);
 updateActiveNav();
+updateTopbarVisibility();
 };
 
 boot().catch((error) => {
