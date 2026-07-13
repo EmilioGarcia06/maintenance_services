@@ -13,8 +13,10 @@
 }
 
 .service-card__image {
-  min-height: 14rem;
+  min-height: 11rem;
   object-fit: cover;
+  object-position: center top;
+
 }
 
 .service-card__body {
