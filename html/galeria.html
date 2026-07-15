@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Galería de trabajos realizados por área: electricidad, plomería y mantenimiento." />
-  <title>ED Solutions| Servicios Profesionales</title>
+  <title>ED Solutions | Servicios Profesionales</title>
+  <link rel="icon" type="image/png" href="/img/Brand.png" />
+  <link rel="apple-touch-icon" href="/img/Brand.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
@@ -15,15 +17,22 @@
   <div class="page-orb page-orb--right"></div>
 
   <header class="topbar">
-    <a class="brand" href="/index.html" aria-label="Volver al inicio de E Y D">
-      <span class="brand__mark">E</span>
+    <a class="brand" href="/index.html" aria-label="Volver al inicio de ED Solutions">
+      <span class="brand__mark">
+        <img src="/img/Brand.png" alt="Logo de ED Solutions" width="64" height="64" />
+      </span>
       <span class="brand__text">
         <strong>ED Solutions</strong>
         <small>Galería de trabajos</small>
       </span>
     </a>
 
-    <nav class="nav" aria-label="Secciones de la galería">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+      <span class="nav-toggle__icon" aria-hidden="true"></span>
+      <span class="nav-toggle__label">Menú</span>
+    </button>
+
+    <nav id="primary-navigation" class="nav" aria-label="Secciones de la galería">
       <a href="#electricidad">Electricidad</a>
       <a href="#plomeria">Plomería</a>
       <a href="#mantenimiento">Mantenimiento</a>
@@ -122,7 +131,7 @@
 
       <div class="gallery-grid">
         <article class="gallery-item reveal">
-          <img src="/img/Imper_dans.png" alt="Mantenimiento en hotel" loading="lazy" />
+          <img src="/img/Imper_dans.webp" alt="Mantenimiento en hotel" loading="lazy" width="660" height="996" />
           <div class="gallery-item__body">
             <h3>Áreas comunes</h3>
             <p>Atención a espacios compartidos con una presentación cuidada y resultados visibles.</p>

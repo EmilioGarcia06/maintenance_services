@@ -1,13 +1,20 @@
 <header class="topbar">
   <a class="brand" href="/index.html" aria-label="Ir al inicio de ED Solutions">
-    <span class="brand__mark">ED</span>
+    <span class="brand__mark">
+      <img src="/img/Brand.png" alt="Logo de ED Solutions" width="64" height="64" />
+    </span>
     <span class="brand__text">
       <strong>ED Solutions </strong>
       <small>Servicios técnicos de mantenimiento</small>
     </span>
   </a>
 
-  <nav class="nav" aria-label="Navegación principal">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+    <span class="nav-toggle__icon" aria-hidden="true"></span>
+    <span class="nav-toggle__label">Menú</span>
+  </button>
+
+  <nav id="primary-navigation" class="nav" aria-label="Navegación principal">
     <a href="#servicios">Servicios</a>
     <a href="#trabajos">Trabajos</a>
     <a href="#proceso">Proceso</a>
